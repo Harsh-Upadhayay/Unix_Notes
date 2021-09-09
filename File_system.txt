@@ -1,0 +1,18 @@
+All data in Unix is organized into files. All files are organized into directories. These directories are organized into a tree-like structure called the filesystem.
+
+In Unix, there are three basic types of files - 
+
+	*Ordinary Files : Contains data, text, or program instructions.
+	*Directories : Stores files (equivalent to folders).
+	*Special Files : Provide access to hardware such as hard drives, CD-ROM drives, modems. Aliases also come under this category 
+
+
+/*MetaCharacters
+** i). '*' : to match 0 or more characters.
+** ii). '?' : to match single characters.
+*/
+
+Example : Display all files ending with 
+just .doc.
+"$ls *.doc"
+
