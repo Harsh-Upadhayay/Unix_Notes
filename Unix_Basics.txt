@@ -1,0 +1,150 @@
+#File Management 
+
+
+All data in Unix is organized into files. All files are organized into directories. These directories are organized into a tree-like structure called the filesystem.
+
+In Unix, there are three basic types of files - 
+
+	*Ordinary Files : Contains data, text, or program instructions.
+	*Directories : Stores files (equivalent to folders).
+	*Special Files : Provide access to hardware such as hard drives, CD-ROM drives, modems. Aliases also come under this category 
+
+
+/*MetaCharacters
+** i). '*' : to match 0 or more characters.
+** ii). '?' : to match single characters.
+** iii). '.' : represents current directory.
+** iv). '..' : represents previous directory. 
+*/
+
+Example : Display all files ending with 
+just .doc.
+"$ls *.doc"
+
+
+/*Linux Commands
+
+** 1). '$ cat filename' : shows contents of file 
+			i). 'cat -b filename' : displays contents along-with line number
+
+** 2). '$ wc filename' : counts total number of words/char in a file.
+		Column #:	
+			i).  lines
+			ii). Words
+			iii).Bytes
+			iv). Name
+
+** 3). '$ cp source destination' : Copies file.
+
+** 4). '$ mv old_file new_file' : moves file.
+
+** 5). '$ rm filename' : deletes file.
+
+*/
+
+
+#Directory Management
+
+Unix uses a hierarchical structure for organizing files and directories. This structure is often referred to as directory tree. 
+The tree has single root node, the slash character (/), and all other directories are contained below it.
+
+/*Linux Commands
+
+** 6). '$ cd ~username' : go to other user's home directory
+	i). 'cd -' : go in last(past) directory.
+
+** 7). '$ pwd' : To determine where you are within the filesystem hierarchy
+
+** 8). '$ mkdir' : creates directory.
+		i). 'mkdir -p' : creates all the necessary parent directory.
+
+** 9). '$ rmdir' : removes directory.
+
+** 10). '$ ls' : lists content of current directory.
+	i). 'ls -l' : displays information of contents of current directory.
+		*first column represents different access modes(in group of 3).
+			*(owner)(group)(all).
+*/
+
+#File Permission / Access Modes
+
+Every file in Unix has the following attributes: 
+
+*Owner permissions : Determines what actions the owner of file can perform 
+*Group permissions : Determines what actions a user, who is a member of the group that a file belongs to, can perform on the file.
+*Other(world) permissions : Determines what actions all other users can perform on the file.
+
+ File access mode : 
+ Read(r), Write(w), Execute(x).
+
+ Directory access mode : 
+ Read(r) : User can look at the filenames inside the directory.
+ Write(w) : User can add or delete files form the directory.
+ Execute(x) : TRAVERSE PERMISSION .. A user must have execute access to the bin directory to execute the ls or the cd command.
+
+While creating an account on Unix, it assigns a owner ID and a group ID to each user. to change them "chown" & "chgrp" can be used.
+
+/* Linux Commands
+
+ ** 11). '$ chmod (file_permission) filename' : change mode, used to change file permission
+
+ 	*SYMBOLIC MODE : 
+	 	i). '+' : adds the designated permission.
+	 	ii). '-' : removes the desginated permission. 
+	 	iii). '=' sets the designated permissions.
+	 			/*********/
+		 		example : 
+		 $ls -l testfile
+		-rwxrwxr--  1 amrood   users 1024  Nov 2 00:10  testfile
+
+
+		$chmod o+wx testfile
+		$ls -l testfile
+		-rwxrwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+		$chmod u-x testfile
+		$ls -l testfile
+		-rw-rwxrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+		$chmod g = rx testfile
+		$ls -l testfile
+		-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+
+		combined : 
+		$chmod o+wx,u-x,g = rx testfile
+		$ls -l testfile
+		-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
+ 			/*********/
+
+	*ABSOLUTE MODE 
+
+		Number 	Octal Permission Representation 								Ref
+		0 			No permission 												---
+		1 			Execute permission 											--x
+		2 			Write permission 											-w-
+		3 			Execute and write permission: 1 (execute) + 2 (write) = 3 	-wx
+		4 			Read permission 											r--
+		5 			Read and execute permission: 4 (read) + 1 (execute) = 5 	r-x
+		6 			Read and write permission: 4 (read) + 2 (write) = 6 		rw-
+		7 			All permissions: 4 (read) + 2 (write) + 1 (execute) = 7 	rwx
+
+** 12). '$ chown user filelist' : change owner of files to user
+
+** 13). '$ chgrp user filelist' : change group.
+
+*/
+
+**SUID & SGID**
+
+
+#Unix/ Linux Environment
+
+Environment variables : Set without using the $ sign but to access their value $ sign is used as prefix.
+
+
+
+
+
+
+
+
+
+
