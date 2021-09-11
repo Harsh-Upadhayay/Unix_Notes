@@ -1,0 +1,45 @@
+# Unix / Linux Shell 
+
+
+* A shell is a command line interpreter and typical operations by shell scripts include file manipulation, program execution, and printing text.
+
+*Shell provides an interface to the Unix system.
+
+* A shell script is a computer program designed to be run by the Unix/Linux shell.
+
+* Shell scripts and functions are both interpreted. This means they are not compiled.
+
+# Shell Variables
+
+
+* A variable is nothing more than a pointer to the actual data. The shell enables you to create, assign, and delete variables.
+
+* A variable name can only contain characters form the following set {a to z or A to Z} U {0 to 0} U {_}
+
+* Conventionally a Unix variable name should be in all CAPS.
+
+* Definition : variable_name=variable_value
+
+* Scalar variable : : can hold only one value at a time.
+
+* '$' Character is used to access the value of a variable.
+
+* 'readonly variable_name' : Do I really need to explain it?
+
+* 'unset variable_name' : Unsetting a variable directs the shell to remove the variable from the list of variables that it tracks.
+
+/* Special variables 
+
+** 1). '$0' The filename of the current script.
+** 2). '$n' These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+** 3). '$n' THe number of arguments supplied to a script.
+** 4). '$?' The exit status of the last command executed. 
+** 5). '$$' The process ID of current shell, or the shell under which the shell script is being executed.
+** 6). '$!' The process number of the last background command
+** 7). '$*' All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+** 8). '$@' All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+
+*/
+
+* Exit Status : Exit status is a numerical value returned by every command upon its completion. As a rule, most commands return an exit status of 0 if they were successful, and 1 if they were unsuccessful.
+
