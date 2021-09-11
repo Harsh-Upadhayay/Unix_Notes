@@ -92,8 +92,8 @@ While creating an account on Unix, it assigns a owner ID and a group ID to each 
 	 	i). '+' : adds the designated permission.
 	 	ii). '-' : removes the desginated permission. 
 	 	iii). '=' sets the designated permissions.
-	 			/*********/
-		 		example : 
+			 			/*********/
+				 		example : 
 		 $ls -l testfile
 		-rwxrwxr--  1 amrood   users 1024  Nov 2 00:10  testfile
 
@@ -112,7 +112,7 @@ While creating an account on Unix, it assigns a owner ID and a group ID to each 
 		$chmod o+wx,u-x,g = rx testfile
 		$ls -l testfile
 		-rw-r-xrwx  1 amrood   users 1024  Nov 2 00:10  testfile
- 			/*********/
+ 						/*********/
 
 	*ABSOLUTE MODE 
 
@@ -130,6 +130,20 @@ While creating an account on Unix, it assigns a owner ID and a group ID to each 
 
 ** 13). '$ chgrp user filelist' : change group.
 
+** 14). '$ grep pattern file(s)' : searches a file or files for lines that have a certain pattern.
+	i). 'greap -v' : prints all lines that do not match pattern.
+	ii). 'grep -n' : prints the matched line and its line number.
+	iii). 'grep -l' : prints only the names of files with matching lines.
+	iv). 'grep -c' : prints only the count of matching lines.
+	v). 'grep -i' : matches either upper or lowercase.
+
+** 16). '$ sort filename' : sorts, duh!
+	i). 'sort -n' : sorts numerically ex : 10 will sort after 2.
+	ii). 'sort -r' : reverses
+	iii). 'sort -f' : sorts uppercase and lowercase together.
+	iv). 'grep +x' : ignores first x fields when sorting
+
+** 17). 'more filename' : displays one page at a time.
 */
 
 **SUID & SGID**
@@ -140,11 +154,75 @@ While creating an account on Unix, it assigns a owner ID and a group ID to each 
 Environment variables : Set without using the $ sign but to access their value $ sign is used as prefix.
 
 
+Whenever user login in to the syster, the shell undergoes a phase called initialization to set up the environment. It is a two-step proccess theat involves the shell reading the following files : 
+	i). /etc/profile : maintained by the system administrator & contains shell initilization information required by all the users
+	ii). .profile : User specific (in the home directory)
+if the files are not present then they are skipped without showing any error message.
+
+/*Unix Variables 
+**
+** 1). $PATH vairable 
+
+ specifies the loactions in which the shell should look for commands.  each inidvidual entry(directory) is seprated by the colon (:) char.
+
+** 2). $PS1 variable 
+
+ The characters that the shell displays as your comand prompt are stored in it.
+
+** 3). $PS2 variable 
+
+ The default secondary prompt is > (the greater than sign), but can be changed by re-defining the PS2 shell variable
+
+** 4). DISPLAY
+
+Contains the identifier for the display that X11 programs should use by default.
+
+** 5). HOME
+
+Indicates the home directory of the current user: the default argument for the cd built-in command.
+
+** 6). IFS
+
+Indicates the Internal Field Separator that is used by the parser for word splitting after expansion.
+
+** 7). LANG
+
+LANG expands to the default system locale; LC_ALL can be used to override this. For example, if its value is pt_BR, then the language is set to (Brazilian) Portuguese and the locale to Brazil.
+
+** 8). LD_LIBRARY_PATH
+
+A Unix system with a dynamic linker, contains a colonseparated list of directories that the dynamic linker should search for shared objects when building a process image after exec, before searching in any other directories.
+
+** 9). PWD
+
+Indicates the current working directory as set by the cd command. 	
+
+** 10). RANDOM
+
+Generates a random integer between 0 and 32,767 each time it is referenced.
+
+** 11). SHLVL
+
+Increments by one each time an instance of bash is started. This variable is useful for determining whether the built-in exit command ends the current session.
+
+** 12). TERM
+
+Refers to the display type.
+11 	
+
+** 13). TZ
+
+Refers to Time zone. It can take values like GMT, AST, etc.
+12 	
+
+** 14). UID
+
+Expands to the numeric user ID of the current user, initialized at the shell startup
+
+*/
 
 
+#pipes : (|) connects two commands together so that the output from one program becoms the input of hte next proggram.
 
-
-
-
-
+#filters : When a program takes its input from another program, it performs some operation on that input, and writes the result to the standard output. It is referred to as a filter.
 
