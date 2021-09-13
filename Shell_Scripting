@@ -43,3 +43,21 @@
 
 * Exit Status : Exit status is a numerical value returned by every command upon its completion. As a rule, most commands return an exit status of 0 if they were successful, and 1 if they were unsuccessful.
 
+
+
+# Array
+
+Initialization : 
+	i). Array_name[index] = value
+	ii). (APPLICABLE ONLY FOR BASH): array_name(value1 value2 valuen)
+	iii). (APPLICABLE ONLY FOR KSH): set -A array_name value1 value2...
+
+Accessing : 
+	i). ${array_name[index]} : one at a time.
+	ii). ${array_name[*]} : all at a time.
+	iii). ${array_name[@]} : all at a time.
+P.S. : I really don't know the difference.
+
+# Shell Basic Operators 
+
+https://www.tutorialspoint.com/unix/unix-basic-operators.htm
